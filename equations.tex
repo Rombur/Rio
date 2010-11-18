@@ -1,0 +1,45 @@
+\section{Equations}
+The transport equation for neutral particle is given by :
+\begin{equation}
+\bo \cdot \bn \Psi(\br,\bo,E) + \Sigma_t(\br,E) \Psi(\br,\bo,E) =
+\int_{4\pi}\int_0^{\infty} \Sigma_s\(\br,\bo \cdot \bo',E'\rightarrow E\)
+\Psi(\br,\bo',E')dE'd\bo' + Q(\br,\bo,E)
+\end{equation}
+Like we said before, we will replace this equation by the
+Boltzmann-Fokker-Planck equation (BFP). The idea is to decompose the higly forward
+peaked scattering cross section into a sum of a forward-peaked cross section
+and a smooth cross section. The BFP equation is given by (the variables are
+omitted for brievety) \cite{morel_96} :
+\begin{equation}
+\bo \cdot \bn \Psi + \Sigma_t \Psi = \int_{4\pi}\int_0^{\infty} \Sigma_s\(\bo
+\cdot \bo',E'\rightarrow E\) \Psi(\bo',E')dE'd\bo' + \frac{\alpha}{2}
+\(\frac{\partial}{\partial \mu} \(1-\mu^2\) \frac{\partial \Psi}{\partial \mu}
++ \frac{1}{1-\mu^2} \frac{\partial^2 \Psi}{\partial \phi}\) +
+\frac{\partial S\Psi}{\partial E}  + Q
+\end{equation}
+where the second and the third term of the right-hand-side changes the direction of 
+the particles and the fourth term changes the energy of the particles. $\alpha$ is 
+the restricted momentum transfert :
+\begin{equation}
+\alpha(E) = 2 \pi \int_0^E \int_{-1}^1 \Sigma_s(E\rightarrow E',\mu_0) (1-\mu_0) 
+d\mu_0 dE
+\end{equation}
+and $S$ is the restricted stopping power :
+\begin{equation}
+S(E) = 2\pi \int_0^{E} \int_{-1}^{1} \Sigma_s(E\rightarrow E') \(E-E'\)d\mu_0 dE'
+\end{equation}
+It is worth to notice that the term
+$\frac{\alpha}{2}\(\frac{\partial}{\partial \mu}\(1-\mu^2\)\frac{\partial
+\Psi}{\partial \mu}+\frac{1}{1-\mu^2}\frac{\partial^2\Psi}{\partial \phi}\)$ is very 
+close to 0 when $\mu \neq 1$. Thus, this term can be replace by
+$c\delta(1-\mu) \Psi$. So the equation can be rewritten as : 
+\begin{equation}
+\bo \cdot \bn \Psi + \Sigma_t \Psi = \int_{4\pi}\int_0^{\infty} \Sigma_s\(\bo
+\cdot \bo',E'\rightarrow E\) \Psi(\bo',E')dE'd\bo' + c \delta(1-\mu) \Psi +
+\frac{\partial}{\partial E}\beta \Psi + Q
+\end{equation}
+The 2 extra-terms, in the previous equation, can be either treated explicitly
+or they can be treated in the cross sections. That was done in the CEPXS code
+\cite{cepxs}. In this work, we will use the cross section produced by CEPXS to
+compute the coupled photon-electron transport.\\
+\red{Parler de Galerkin mais besoin du papier de Morel.}

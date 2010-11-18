@@ -1,0 +1,24 @@
+\section{Introduction}
+The transport of photon and electron has a lot of applications in medical
+physics and paticularly in radiotherapy. The radiotherapy consists in sending
+X-ray on a cancerous tumor in order to destroy it. The photons interact in the
+body producing electrons by photo-electric effect. These electrons destroy the
+cells and produce secondary photons. It is important to know accurately what
+is the dose sent. The dose has to be large enough in the tumor to kill the
+cancerous but as small as possible in the healthy cells. To compute this dose,
+several methods can be applied :
+\begin{description}
+\item[Analytic methods,] very fast but inacurrate
+\item[Deterministic method,] fast and acurrate but needs a lot of memory
+\item[Monte-Carlo,] very acurrate but slow to converge.
+\end{description}
+In this work, we will present a $S_n$ method for the photon-electron
+transport. The difficulty of this calculation comes from the transport of the
+electrons. The electrons are charged particles and thus, they have very
+anisotropic scattering. This anisotropy creates some problems since the
+standard Legendre expansion to represent the cross-sections would require
+hundreds of terms. A common approximation is to replace the Boltzmann equation
+by the Boltzmann-Fokker-Planck equation. These equation consists in adding in
+2 terms: one causes to particles to redistribute in energy change and the
+other to redistribute in energy without directional\cite{morel_81}. This
+allows to keep the Legendre expansion of the cross-section to a low order.

@@ -1,0 +1,50 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{array}
+\usepackage{color}
+\usepackage{graphicx}
+\usepackage{float} %utiliser H pour forcer à mettre l'image où on veut
+\usepackage{lscape} %utilisation du mode paysage
+\usepackage{mathbbol} % permet d'avoir le vrai symbol pour les reels grace a mathbb
+\usepackage{enumerate}
+\usepackage{marvosym}	
+\usepackage{moreverb} % permet d'utiliser verbatimtab : conservation la tabulation 
+
+
+\setlength {\textwidth}{16cm}
+\setlength {\textheight}{21cm} 
+\setlength {\oddsidemargin}{0cm}
+\setlength{\headsep}{5pt} 
+
+\newcommand\bn{\boldsymbol{\nabla}}
+\newcommand\bo{\boldsymbol{\Omega}}
+\newcommand\br{\mathbf{r}}
+\newcommand\la{\left\langle}
+\newcommand\ra{\right\rangle}
+\newcommand\bs{\boldsymbol}
+\newcommand\red{\textcolor{red}}
+
+\renewcommand{\(}{\left(}
+\renewcommand{\)}{\right)}
+\renewcommand{\[}{\left[}
+\renewcommand{\]}{\right]}
+
+\newtheorem{theorem}{Theorem}[section]
+
+\begin{document}
+\title{Coupled photon-electron transport}
+\author{Bruno Turcksin \and Jean Ragusa \and Jim Morel \and Damien
+Lebrun-Grandie} 
+\date{}
+\maketitle
+
+% Introduction
+\input{introduction}
+
+% Equations
+\input{equations}
+
+\bibliographystyle{unsrt}
+\bibliography{biblio}
+
+\end{document}
