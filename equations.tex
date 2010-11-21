@@ -6,10 +6,10 @@ The transport equation for neutral particle is given by :
 \Psi(\br,\bo',E')dE'd\bo' + Q(\br,\bo,E)
 \end{equation}
 Like we said before, we will replace this equation by the
-Boltzmann-Fokker-Planck equation (BFP). The idea is to decompose the higly forward
+Boltzmann-Fokker-Planck equation (BFP). The idea is to decompose the highly forward
 peaked scattering cross section into a sum of a forward-peaked cross section
 and a smooth cross section. The BFP equation is given by (the variables are
-omitted for brievety) \cite{morel_96} :
+omitted for brevity) \cite{morel_96} :
 \begin{equation}
 \bo \cdot \bn \Psi + \Sigma_t \Psi = \int_{4\pi}\int_0^{\infty} \Sigma_s\(\bo
 \cdot \bo',E'\rightarrow E\) \Psi(\bo',E')dE'd\bo' + \frac{\alpha}{2}
@@ -18,8 +18,12 @@ omitted for brievety) \cite{morel_96} :
 \frac{\partial S\Psi}{\partial E}  + Q
 \end{equation}
 where the second and the third term of the right-hand-side changes the direction of 
-the particles and the fourth term changes the energy of the particles. $\alpha$ is 
-the restricted momentum transfert :
+the particles without changing the energy and the fourth term changes the energy of 
+the particles without changing the direction (continuous slowing-down term).
+The continuous slowing down is used for the "soft" interactions that result in
+small-energy losses. The catastrophic interactions that result in large energy
+losses are represented with the standard Boltzmann scattering. $\alpha$ is the 
+restricted momentum transfer :
 \begin{equation}
 \alpha(E) = 2 \pi \int_0^E \int_{-1}^1 \Sigma_s(E\rightarrow E',\mu_0) (1-\mu_0) 
 d\mu_0 dE
@@ -28,18 +32,70 @@ and $S$ is the restricted stopping power :
 \begin{equation}
 S(E) = 2\pi \int_0^{E} \int_{-1}^{1} \Sigma_s(E\rightarrow E') \(E-E'\)d\mu_0 dE'
 \end{equation}
-It is worth to notice that the term
+The restricted stopping power is defined as the portion of the total stopping
+power which is not due to catastrophic collisions.\\
+It is worth to notice that the term :
 $\frac{\alpha}{2}\(\frac{\partial}{\partial \mu}\(1-\mu^2\)\frac{\partial
 \Psi}{\partial \mu}+\frac{1}{1-\mu^2}\frac{\partial^2\Psi}{\partial \phi}\)$ is very 
 close to 0 when $\mu \neq 1$. Thus, this term can be replace by
-$c\delta(1-\mu) \Psi$. So the equation can be rewritten as : 
+$\int_{-1}^1 c\delta(\mu-1) \Psi d\mu$. So the equation can be rewritten as : 
 \begin{equation}
 \bo \cdot \bn \Psi + \Sigma_t \Psi = \int_{4\pi}\int_0^{\infty} \Sigma_s\(\bo
-\cdot \bo',E'\rightarrow E\) \Psi(\bo',E')dE'd\bo' + c \delta(1-\mu) \Psi +
-\frac{\partial}{\partial E}\beta \Psi + Q
+\cdot \bo',E'\rightarrow E\) \Psi(\bo',E')dE'd\bo' + \int_{-1}^1 c
+\delta(\mu-1) \Psi d\mu + \frac{\partial}{\partial E}\beta \Psi + Q
+\label{solved}
 \end{equation}
 The 2 extra-terms, in the previous equation, can be either treated explicitly
 or they can be treated in the cross sections. That was done in the CEPXS code
 \cite{cepxs}. In this work, we will use the cross section produced by CEPXS to
-compute the coupled photon-electron transport.\\
-\red{Parler de Galerkin mais besoin du papier de Morel.}
+compute the coupled photon-electron transport. Unlike \cite{acuros} we do not 
+assume that the electrons do not produce photons. The system is fully coupled 
+(photons produce electrons and electrons produce photons) and thus, there is some 
+upscattering term in the scattering matrix even if there is not upscattering 
+physically.\\
+Now we will focus on the scattering term assuming that this quantity has been
+integrated over the \hbox{energy :}
+\begin{equation}
+S = \int_{4\pi} \Sigma_s \(\bo \cdot \bo'\) \Psi\(\bo'\) d\bo' + \int_{-1}^1
+c\delta (\mu-1) \Psi d\mu
+\label{scattering}
+\end{equation}
+In a $S_n$ code, it is usual to write the discretized scattering source 
+(\ref{scattering}) a product of 3 matrices \cite{graal} :
+\begin{equation}
+\bs{S} = M \Sigma D \bs{\Psi}
+\end{equation}
+where $\bs{\Psi}$ is a vector containing all the flux moments, $D$ is the
+discrete-to-moment matrix which maps a vector of discrete angular flux values
+to a corresponding vector of flux moments, $\Sigma$ is the scattering matrix
+which contains the moments of the scattering cross sections on its diagonal and 
+$M$ is the moment-to-discrete matrix which maps a vector of flux moments to a 
+corresponding vector of discrete angular flux values. The Galerkin quadrature 
+requires that :
+\begin{equation}
+M = D^{-1}
+\end{equation}
+and thus, $M$ and $D$ has to be square, which implies that the number of
+moments is equal to number of direction.\\
+We want to use the Galerkin quadrature because it integrates exactly a delta
+function scattering. Let's assume that :
+\begin{equation}
+\Sigma(\mu) = \delta(\mu-1)
+\end{equation}
+It is obvious that :
+\begin{equation}
+\begin{split}
+S &= \int_{-1}^1 \delta(\mu-1) \Psi(\mu) d\mu\\
+&= \Psi
+\end{split}
+\end{equation}
+Because $P_l(1)=1$ for all $l$, all expansion coefficients fort the delta
+function are equal to unity, and the cross-section matrix is the identity
+matrix. Thus, we have :
+\begin{equation}
+\begin{split}
+\bs{S} &= MD\bs{\Psi}\\
+&= \bs{\Psi}\\
+\end{split}
+\end{equation}
+
