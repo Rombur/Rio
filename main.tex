@@ -1,8 +1,8 @@
-\documentclass{article}
+\documentclass[11pt,letter,twoside]{mc2011}
 \usepackage{amsmath}
 \usepackage{array}
-\usepackage{color}
-\usepackage{graphicx}
+%\usepackage{color}
+%\usepackage{graphicx}
 \usepackage{float} %utiliser H pour forcer à mettre l'image où on veut
 \usepackage{lscape} %utilisation du mode paysage
 \usepackage{mathbbol} % permet d'avoir le vrai symbol pour les reels grace a mathbb
@@ -31,12 +31,46 @@
 
 \newtheorem{theorem}{Theorem}[section]
 
+\usepackage[numbers,sort&compress]{natbib}
+
+\usepackage{fancyhdr,lastpage}
+
+\usepackage[dvips]{graphicx,color}
+
+\pagestyle{fancy}
+
+\globalmc2011
+
 \begin{document}
-\title{Coupled photon-electron transport}
-\author{Bruno Turcksin \and Jean Ragusa \and Jim Morel \and Damien
-Lebrun-Grandie} 
+\title{Restricted Galerkin quadrature for coupled photon-electron transport.}
+\author{
+    \textbf{Bruno Turcksin, Jean Ragusa, Jim Morel and Damien
+    Lebrun-Grandie}\\
+    Texas A\&M University, Department of Nuclear Engineering\\
+    College Sation, Texas 77843-3133\\
+    turcksin@neo.tamu.edu; ragusa@ne.tamu.edu; morel@ne.tamu.edu;
+    lebrungd@neo.tamu.edu
+}
 \date{}
 \maketitle
+
+\thispagestyle{empty}
+
+\begin{abstract}
+Use 8.5 x 11 paper size, with 1" margins on all sides. A required 200-250 word abstract starts on this line.  
+Leave two blank lines before ABSTRACT and one after.  Use 10 point Times New Roman here and single 
+(10 point) spacing.  The abstract is a very brief summary highlighting main accomplishments, what is new, 
+and how it relates to the state-of-the-art.
+
+\keywords{Galerkin quadrature, electron, radiotherapy}
+
+\end{abstract}
+
+\newcommand\authorname{Bruno Turcksin et al.}
+\newcommand\shorttitlename{Restricted Galerkin quadrature for coupled
+photon-electron transport.}
+
+\fancymc2011
 
 % Introduction
 \input{introduction}
@@ -46,6 +80,9 @@ Lebrun-Grandie}
 
 % Memory
 \input{memory}
+
+% Results
+\input{results}
 
 \bibliographystyle{unsrt}
 \bibliography{biblio}

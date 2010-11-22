@@ -1,5 +1,8 @@
 pdf: main.tex \
 	introduction.tex \
+	equations.tex\
+	memory.tex\
+	results.tex\
 	biblio.bib
 	pdflatex main.tex 
 	-bibtex main

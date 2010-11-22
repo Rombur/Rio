@@ -1,9 +1,12 @@
 \section{Equations}
 The transport equation for neutral particle is given by :
 \begin{equation}
-\bo \cdot \bn \Psi(\br,\bo,E) + \Sigma_t(\br,E) \Psi(\br,\bo,E) =
+\begin{split}
+\bo \cdot \bn \Psi(\br,\bo,E) + \Sigma_t(\br,E) \Psi(\br,\bo,E) &=
 \int_{4\pi}\int_0^{\infty} \Sigma_s\(\br,\bo \cdot \bo',E'\rightarrow E\)
-\Psi(\br,\bo',E')dE'd\bo' + Q(\br,\bo,E)
+\Psi(\br,\bo',E')dE'd\bo'\\
+& + Q(\br,\bo,E)
+\end{split}
 \end{equation}
 Like we said before, we will replace this equation by the
 Boltzmann-Fokker-Planck equation (BFP). The idea is to decompose the highly forward
@@ -11,24 +14,29 @@ peaked scattering cross section into a sum of a forward-peaked cross section
 and a smooth cross section. The BFP equation is given by (the variables are
 omitted for brevity) \cite{morel_96} :
 \begin{equation}
-\bo \cdot \bn \Psi + \Sigma_t \Psi = \int_{4\pi}\int_0^{\infty} \Sigma_s\(\bo
-\cdot \bo',E'\rightarrow E\) \Psi(\bo',E')dE'd\bo' + \frac{\alpha}{2}
+\begin{split}
+\bo \cdot \bn \Psi + \Sigma_t \Psi &= \int_{4\pi}\int_0^{\infty} \Sigma_s\(\bo
+\cdot \bo',E'\rightarrow E\) \Psi(\bo',E')dE'd\bo'\\
+& + \frac{\alpha}{2}
 \(\frac{\partial}{\partial \mu} \(1-\mu^2\) \frac{\partial \Psi}{\partial \mu}
 + \frac{1}{1-\mu^2} \frac{\partial^2 \Psi}{\partial \phi}\) +
 \frac{\partial S\Psi}{\partial E}  + Q
+\end{split}
 \end{equation}
-where the second and the third term of the right-hand-side changes the direction of 
-the particles without changing the energy and the fourth term changes the energy of 
-the particles without changing the direction (continuous slowing-down term).
-The continuous slowing down is used for the "soft" interactions that result in
-small-energy losses. The catastrophic interactions that result in large energy
-losses are represented with the standard Boltzmann scattering. $\alpha$ is the 
-restricted momentum transfer :
+where $\mu$ is the cosine of the directional azimuthal angle, $\phi$ is the
+directional azimuthal angle, the second and the third term of the right-hand-side 
+changes the direction of the particles without changing the energy and the fourth 
+term changes the energy of the particles without changing the direction (continuous 
+slowing-down term). The continuous slowing down is used for the "soft" interactions 
+that result in small-energy losses. The catastrophic interactions that result in 
+large energy losses are represented with the standard Boltzmann scattering. $\alpha$ 
+is the restricted momentum transfer :
 \begin{equation}
 \alpha(E) = 2 \pi \int_0^E \int_{-1}^1 \Sigma_s(E\rightarrow E',\mu_0) (1-\mu_0) 
 d\mu_0 dE
 \end{equation}
-and $S$ is the restricted stopping power :
+with $\mu_0 = \mu'\mu+\sqrt{\(1-\mu'^2\)\(1-\mu^2\)} cos\(\phi'-\phi\)$ and $S$ is 
+the restricted stopping power :
 \begin{equation}
 S(E) = 2\pi \int_0^{E} \int_{-1}^{1} \Sigma_s(E\rightarrow E') \(E-E'\)d\mu_0 dE'
 \end{equation}
@@ -46,13 +54,13 @@ $\int_{-1}^1 c\delta(\mu-1) \Psi d\mu$. So the equation can be rewritten as :
 \label{solved}
 \end{equation}
 The 2 extra-terms, in the previous equation, can be either treated explicitly
-or they can be treated in the cross sections. That was done in the CEPXS code
-\cite{cepxs}. In this work, we will use the cross section produced by CEPXS to
-compute the coupled photon-electron transport. Unlike \cite{acuros} we do not 
-assume that the electrons do not produce photons. The system is fully coupled 
-(photons produce electrons and electrons produce photons) and thus, there is some 
-upscattering term in the scattering matrix even if there is not upscattering 
-physically.\\
+or they can be treated in the cross sections. The latter was done in the CEPXS
+code which produces cross sections for photons and electrons transport \cite{cepxs}. 
+In this work, we will use the cross section produced by CEPXS to compute the coupled 
+photon-electron transport. Unlike \cite{acuros}, we do not assume that the electrons 
+do not produce photons. The system is fully coupled (photons produce electrons and 
+electrons produce photons) and thus, there is some upscattering term in the 
+scattering matrix even if there is not upscattering physically.\\
 Now we will focus on the scattering term assuming that this quantity has been
 integrated over the \hbox{energy :}
 \begin{equation}
@@ -61,7 +69,7 @@ c\delta (\mu-1) \Psi d\mu
 \label{scattering}
 \end{equation}
 In a $S_n$ code, it is usual to write the discretized scattering source 
-(\ref{scattering}) a product of 3 matrices \cite{graal} :
+(\ref{scattering}) a product of 3 \hbox{matrices \cite{graal} :}
 \begin{equation}
 \bs{S} = M \Sigma D \bs{\Psi}
 \end{equation}

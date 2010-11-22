@@ -1,16 +1,18 @@
-\section{Memory}
+\section{Memory issue}
 In the previous section, we showed that we must use the Galerkin to solve
 (\ref{solved}) correctly. That is a huge problem problem for the memory
 consumption. Usually there are much less flux moments than there are angular
-fluxes. Thus, the flux is store by storing its moments. However, like we
+fluxes. Thus, the flux is stored by storing its moments. However, like we
 showed before, the Galerkin quadrature requires the number of moments to be
-equal to the number of directions. In \cite{mem}, the authors used a Legendre
-expansion of the scattering cross section lower than the one required by the
+equal to the number of directions. This requirement is very restrictive and
+thus, it is important to see if it is acceptable to decrease the number of
+moments while keeping a higher number of direction. In \cite{mem}, the authors used a 
+Legendre expansion of the scattering cross section lower than the one required by the
 Galerkin quadrature. They have shown a good agreement between their results and
-Monte-Carlo. In this work, we will study more deeply the effects of changing
+Monte-Carlo. In the next section, we will study more deeply the effects of changing
 the order of the Legendre expansion while keeping a larger number of angular
-fluxes. To do that, after building the matrices $M$ and $D$ using the Galerkin 
+fluxes. To do that, after building the matrices $M$ and $D$, using the Galerkin 
 quadrature, we will truncate them to keep only the lower moments. Thus, $M$
 and $D$ will be rectangular instead of square. We will compare the results obtained 
-with our code with the results given by CEPXS/ONELD \cite{cepxs}. We will modify for 
-3 materials (water, Al and Au) the Legendre expansion.
+with our code with the results given by CEPXS/ONELD \cite{cepxs}. We will show
+the results for 3 materials (water, Al and Au) and different Legendre expansion.
