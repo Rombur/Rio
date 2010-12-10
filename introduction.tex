@@ -4,57 +4,58 @@ physics and particularly in radiotherapy. The radiotherapy consists of sending
 X-rays on a cancerous tumor in order to destroy it. The photons interact in the
 body producing electrons by photo-electric effect. These electrons destroy the
 cells and produce secondary photons which will also produce electrons. One
-quantity used to know if a cell will die or not, because of the radiations, is the 
+quantity used to know if a cell will die or due to radiation is the 
 absorbed dose. The absorbed dose is defined as the energy deposition by unit of mass. 
-The unit of the absorbed dose is the Gray $\(Gy=\frac{J}{kg}\)$. It is the
-quantity that will be choose by the physician in order to kill the tumor. The dose 
+The unit of the absorbed dose is the Gray $\(Gy=\frac{J}{kg}\)$. This is the
+quantity that will be chosen by the physician in order to kill the tumor. The dose 
 has to be large enough in the tumor to kill the cancerous cells but as small as 
 possible in the healthy cells. It is very important to spare the healthy cells
-because the radiation can cause cancer several years later. To compute this dose, several methods can be applied :
+because the radiation can cause cancer several years later. To compute this
+dose, several methods can be applied :\\
 \begin{description}
-\item[Semi-analytic methods,] very fast but inaccurate.
-\item[Deterministic methods,] fast and accurate but require a lot of memory.
-\item[Monte-Carlo methods,] very accurate but slow to converge.
+\item[Semi-analytic methods;] very fast but inaccurate.
+\item[Deterministic methods;] fast and accurate but require a lot of memory.
+\item[Monte-Carlo methods;] very accurate but slow to converge.
 \end{description}
-Monte-Carlo methods are of course a very interesting method to have very accurate 
-results, however they are slow to converge. Nowadays, they remain too slow for 
-effective clinical use \cite{acuros}. Others methods like pencil-beam convolution and
+Monte-Carlo methods are, of course, very interesting to have very accurate 
+results, however they are slow to converge and they remain too slow for 
+effective clinical use \cite{acuros}. Other methods like pencil-beam convolution and
 convolution superposition employ the use of pre-calculated Monte-Carlo dose
 kernels, which are then locally scaled to approximate photon and electron
-transport in the presence of heterogeneities. These methods, however, have
-some troubles in the presence of large density gradients, such as those at
-interfaces between different materials : air, bone, lung and soft tissue 
-\cite{acuros}. Because of all the previous reasons stated, the deterministic methods 
-appear to be more and more interesting for radiotherapy. It has been shown in the 
-past that a very good agreement can be obtained between deterministic methods and 
-Monte-Carlo methods \cite{acuros}.\\
+transport in the presence of heterogeneities. These methods have some trouble in 
+the presence of large density gradients, such as those at interfaces between 
+different materials: air, bone, lung and soft tissue \cite{acuros}. Therefore, 
+the deterministic methods appear to be more and more interesting for radiotherapy. 
+It has been shown that a good agreement can be obtained between 
+deterministic methods and Monte-Carlo methods \cite{acuros}.\\
 In this work, we will present a $S_n$ method for the photon-electron
 transport. The difficulty of this calculation comes from the transport of the
 electrons. The electrons are charged particles and thus, they have very
-anisotropic scattering. This is due to the fact that they can interact with other
-particles through Coulomb interaction. Thus, the electrons have a lot of
-interactions where the energy and the direction almost do not change. This 
-anisotropy creates some problems since the standard Legendre expansion to represent 
-the cross-sections would require hundreds of terms. A common approximation is to 
-replace the Boltzmann equation by the Boltzmann-Fokker-Planck equation. These 
-equation consists in adding 2 terms: one causes to particles to redistribute in 
-direction without energy change and the other to redistribute in energy without 
-directional change\cite{morel_81}. This allows to keep the Legendre expansion of the 
-cross-section to a low order. It is worth to note that the Henyey-Greenstein kernel
-widely used to describe the scattering of light in biological tissues cannot be
-expressed using the BFP equation \cite{larsen}. However, this model, even if
-it is useful, because of its simplicity, has no theoretical root. The reason
-why the Henyey-Greenstein cannot be expressed with the BFP equation is that the BFP 
-equation assume that the scattering cross section is very  peaked. The 
-Henyey-Greenstein is not peaked enough to be represented by the BFP
-equation.\\ 
-One last approximation that we will make is to replace the term modifying the
+anisotropic scattering because they can interact with other particles through 
+Coulomb interaction. The electrons have a lot of interactions where the energy 
+and the direction almost do not change. This anisotropy creates some problems 
+since the standard Legendre expansion representing the cross-sections would 
+require hundreds of terms. A common approximation is to replace the Boltzmann 
+equation by the Boltzmann-Fokker-Planck equation. These equation consists of 
+adding two terms: one causes to particles to redistribute in direction without 
+energy change and the other to redistribute in energy without directional 
+change \cite{morel_81}. This allows the Legendre expansion of the cross-section to 
+keep a low order. It is worth to note that the Henyey-Greenstein kernel widely used 
+to describe the scattering of light in biological tissues cannot be expressed using 
+the BFP equation \cite{larsen}. However, this model, even if it is useful, because 
+of its simplicity, has no theoretical root. The reason why the Henyey-Greenstein 
+cannot be expressed with the BFP equation is that the BFP equation assumes that the 
+scattering cross section is highly peaked. The Henyey-Greenstein cross section is 
+not peaked enough to be represented by the BFP equation.\\ 
+The last approximation that we will make is to replace the term modifying the
 direction without changing the energy by a Dirac distribution. However, an exact 
 integration of the Dirac distribution requires to use the Galerkin quadrature 
-\cite{graal}, which requires a lot of memory. Effectively, this quadrature needs 
-the number of flux moments and the number of angular fluxes to be equal. This number 
-rises very quickly with the order the $S_n$ method. For example, when using the $S_n$ 
+\cite{graal}, which requires a lot of memory. This quadrature needs the number of 
+flux moments and the number of angular fluxes to be equal. This number rises very 
+quickly with the order the $S_n$ method. For example, when using the $S_n$ 
 discretization for $n=16$, we have, in 3D, 288 directions and thus, 288 angular 
 fluxes or flux moments to store. In this work, we will see the effects of truncation 
 on the Galerkin quadrature. The goal is to keep as few flux moments as possible while 
-still keeping an accurate solution.
+still keeping an accurate solution. We will also show a method of ordering
+the energy groups which allows to decompose one big transport problem in
+several smaller transport problems.

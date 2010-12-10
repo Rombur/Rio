@@ -1,4 +1,5 @@
 pdf: main.tex \
+	abstract.tex\
 	introduction.tex \
 	equations.tex\
 	memory.tex\

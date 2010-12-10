@@ -1,0 +1,22 @@
+\begin{abstract}
+In this work, we present two methods to decrease memory consumption while solving 
+the Boltzmann-Fokker-Planck equation. The Boltzmann-Fokker-Planck equation is
+the relation used to described the transport of electron. The transport of
+electron, coupled with the transport of photon, is very important in
+radiotherapy because it models the interactions between the X-rays and the
+human body. One of the problems of electron transport is that the
+scattering of electrons is very forward. A very common approximation is to
+represent that peak in the scattering cross section by a Dirac distribution.
+This is convenient but the integration of this distribution requires the
+use of the Galerkin quadrature. This quadrature imposes that the number of moments of
+the flux to be equal to the number of directions (equal to the number of angular 
+fluxes), which is very demanding in term of memory. In this study, 
+we show that even if we do not keep the number of moments as high as the number 
+of directions, we can keep an accurate solution. Another method to decrease the 
+memory consumption consists in choosing an appropriate order for the energy groups. 
+We show in this paper that an appropriate alternation of photons/electrons groups 
+allows us to rewrite one transport problem of $n$ groups as $gcd$ successive 
+transport problems of $\frac{n}{gcd}$ groups. Where $gcd$ is the greatest common 
+divisor between the number of groups of photon and the number of groups of electron.
+\keywords{Galerkin quadrature, electron, radiotherapy}
+\end{abstract}
