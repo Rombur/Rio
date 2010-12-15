@@ -1,7 +1,7 @@
 \section{Equations}                                                      
-In this section, we will present the equation which models the transport of
-electron. We will also show why it is so important to use the Galerkin
-quadrature. The transport equation for neutral particle is given by :
+In this section, we present the equation that models the transport of
+electrons. We will also show why it is so important to use the Galerkin
+quadrature. The transport equation for neutral particles is given by :
 \begin{equation}
 \begin{split}
 \bo \cdot \bn \Psi(\br,\bo,E) + \Sigma_t(\br,E) \Psi(\br,\bo,E) &=
@@ -24,75 +24,83 @@ and a smooth cross section. The BFP equation is given by (the variables are
 omitted for brevity) \cite{morel_96} :
 \begin{equation}
 \begin{split}
-\bo \cdot \bn \Psi + \Sigma_t \Psi &= \int_{4\pi}\int_0^{\infty} \Sigma_s\(\bo
+\bo \cdot \bn \Psi + \Sigma_{tm} \Psi &= \int_{4\pi}\int_0^{\infty} \Sigma_{sm}\(\bo
 \cdot \bo',E'\rightarrow E\) \Psi(\bo',E')dE'd\bo'\\
 & + \frac{\alpha}{2}
 \(\frac{\partial}{\partial \mu} \(1-\mu^2\) \frac{\partial \Psi}{\partial \mu}
-+ \frac{1}{1-\mu^2} \frac{\partial^2 \Psi}{\partial \phi}\) +
++ \frac{1}{1-\mu^2} \frac{\partial^2 \Psi}{\partial \phi^2}\) +
 \frac{\partial S\Psi}{\partial E}  + Q
 \end{split}
 \end{equation}
-where $\mu$ is the cosine of the directional azimuthal angle and $\phi$ is the
-directional azimuthal angle. The second and the third term of the right-hand-side 
-changes the direction of the particles without changing the energy and the fourth 
-term changes the energy of the particles without changing the direction (continuous 
-slowing-down term). The continuous slowing down is used for the ``soft" interactions 
-that result in small-energy losses. The catastrophic interactions that result in 
-large energy losses are represented with the standard Boltzmann scattering. $\alpha$ 
-is the restricted momentum transfer :
+where $\Sigma_{tm}$ is the smooth-component of the total macroscopic cross
+section, $\Sigma_{sm}$ is the smooth-component of the macroscopic differential
+scattering cross section,  $\mu$ is the cosine of the directional polar angle 
+and $\phi$ is the directional azimuthal angle. The second and the third term of the 
+right-hand-side changes the direction of the particles without changing the energy 
+and the fourth term changes the energy of the particles without changing the 
+direction (continuous slowing-down term) \cite{morel_81}. The continuous slowing 
+down is used for the ``soft" interactions that result in small-energy losses. The 
+catastrophic interactions that result in large energy losses are represented with 
+the standard Boltzmann operator. $\alpha$ is the restricted momentum transfer :
 \begin{equation}
-\alpha(E) = 2 \pi \int_0^E \int_{-1}^1 \Sigma_s(E\rightarrow E',\mu_0) (1-\mu_0) 
+\alpha(E) = 2 \pi \int_0^E \int_{-1}^1 \Sigma_{ss}(E\rightarrow E',\mu_0) (1-\mu_0) 
 d\mu_0 dE
 \end{equation}
-with $\mu_0 = \mu'\mu+\sqrt{\(1-\mu'^2\)\(1-\mu^2\)} cos\(\phi'-\phi\)$ and $S$ is 
-the restricted stopping power :
+with $\mu_0 = \mu'\mu+\sqrt{\(1-\mu'^2\)\(1-\mu^2\)} cos\(\phi'-\phi\)$ and
+$\Sigma_{ss}(E\rightarrow E', \mu_0)$ denotes the forward-peaked scattering
+cross section.\\
+$S$ is the restricted stopping power :
 \begin{equation}
-S(E) = 2\pi \int_0^{E} \int_{-1}^{1} \Sigma_s(E\rightarrow E') \(E-E'\)d\mu_0 dE'
+S(E) = 2\pi \int_0^{E} \int_{-1}^{1} \Sigma_{ss}(E\rightarrow E',\mu_0) \(E-E'\)d\mu_0 dE'
 \end{equation}
 The restricted stopping power is defined as the portion of the total stopping
-power which is not due to catastrophic collisions.\\
-It is important to notice that the term :
+power that is not due to catastrophic collisions.\\
+Because of the problems with the term
 $\frac{\alpha}{2}\(\frac{\partial}{\partial \mu}\(1-\mu^2\)\frac{\partial
-\Psi}{\partial \mu}+\frac{1}{1-\mu^2}\frac{\partial^2\Psi}{\partial \phi}\)$ is very 
-close to zero when $\mu \neq 1$. Thus, this term can be replace by
-$\int_{-1}^1 c\delta(\mu-1) \Psi d\mu$. The equation can be rewritten as : 
+\Psi}{\partial \mu} + \frac{1}{1-\mu^2} \frac{\partial^2 \Psi}{\partial
+\Phi^2}\)$ \cite{morel_fp1}\cite{morel_fp2}, we will use another approach and
+retain only the asymptotic limit on the energy dependence but not the angular
+dependence. We will keep the continuous slowing-down term and approximate the
+forward peaked angular dependence by a Dirac distribution. The equation can be written as : 
 \begin{equation}
-\bo \cdot \bn \Psi + \Sigma_t \Psi = \int_{4\pi}\int_0^{\infty} \Sigma_s\(\bo
+\bo \cdot \bn \Psi + \Sigma_{tm} \Psi = \int_{4\pi}\int_0^{\infty}
+\Sigma_{sm}\(\bo
 \cdot \bo',E'\rightarrow E\) \Psi(\bo',E')dE'd\bo' + \int_{-1}^1 c
-\delta(\mu-1) \Psi d\mu + \frac{\partial}{\partial E}\beta \Psi + Q
+\delta(\mu-1) \Psi d\mu + \frac{\partial S\Psi}{\partial E} + Q
 \label{solved}
 \end{equation}
-The two extra-terms in the equation \ref{solved} can be either treated explicitly
-or they can be treated in the cross sections. The latter was done in the CEPXS
+The continuous slowing-down term in the 
+equation (\ref{solved}) can be either treated explicitly or it can be treated in 
+the cross sections. The latter was done in the CEPXS
 code which produces cross sections for photons and electrons transport \cite{cepxs}. 
 In this work, we will use the cross section produced by CEPXS to compute the coupled 
 photon-electron transport. Unlike \cite{acuros}, we do not assume that the electrons 
 do not produce photons. The system is fully coupled meaning that photons produce 
 electrons and electrons produce photons. Thus, there are some upscattering 
 terms in the scattering matrix even if there is not upscattering physically.\\
-Now we will focus on the scattering term assuming that this quantity has been
+Now, we will focus on the scattering term assuming that this quantity has been
 integrated over the \hbox{energy :}
 \begin{equation}
-S = \int_{4\pi} \Sigma_s \(\bo \cdot \bo'\) \Psi\(\bo'\) d\bo' + \int_{-1}^1
+S = \int_{4\pi} \Sigma_{sm} \(\bo \cdot \bo'\) \Psi\(\bo'\) d\bo' + \int_{-1}^1
 c\delta (\mu-1) \Psi d\mu
 \label{scattering}
 \end{equation}
 In a $S_n$ code, it is usual to write the discretized scattering source 
-(\ref{scattering}) a product of 3 \hbox{matrices \cite{graal} :}
+(\ref{scattering}) as a product of 3 \hbox{matrices \cite{graal} :}
 \begin{equation}
 \bs{S} = M \Sigma D \bs{\Psi}
 \end{equation}
-where $\bs{\Psi}$ is a vector containing all the flux moments, $D$ is the
-discrete-to-moment matrix which maps a vector of discrete angular flux values
-to a corresponding vector of flux moments, $\Sigma$ is the scattering matrix
-which contains the moments of the scattering cross sections on its diagonal, and 
-$M$ is the moment-to-discrete matrix which maps a vector of flux moments to a 
-corresponding vector of discrete angular flux values. The Galerkin quadrature 
-requires that :
+where $\bs{S}$ is the vector containing the scattering source, $\bs{\Psi}$ is
+the vector containing all the flux moments, $D$ is the discrete-to-moment matrix 
+which maps a vector of discrete angular flux values to a corresponding vector of flux
+moments, $\Sigma$ is the scattering matrix which contains the moments of the 
+scattering cross sections on its diagonal, and $M$ is the moment-to-discrete matrix 
+which maps a vector of flux moments to a corresponding vector of discrete angular 
+flux values. The Galerkin quadrature requires that :
 \begin{equation}
 M = D^{-1}
 \end{equation}
-and therefore, $M$ and $D$ have to be square, which implies that the number of
+and, therefore, $M$ and $D$ have to be square. This implies that the number of
 moments is equal to the number of directions.\\
 We want to use the Galerkin quadrature because it integrates exactly a delta
 function scattering. Let's assume that :
@@ -106,8 +114,8 @@ S &= \int_{-1}^1 \delta(\mu-1) \Psi(\mu) d\mu\\
 &= \Psi
 \end{split}
 \end{equation}
-Because $P_l(1)=1$ for all $l$, all expansion coefficients for the delta
-function are equal to unity, and the cross-section matrix is the identity
+Because $P_l(1)=1$ for all $l$, all expansion coefficients, $\Sigma_l$, for the 
+delta function equal to unity and the cross-section matrix is the identity
 matrix. We get :
 \begin{equation}
 \begin{split}

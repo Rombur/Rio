@@ -1,61 +1,49 @@
 \section{Introduction}
-The transport of photons and electrons has a lot of applications in medical
-physics and particularly in radiotherapy. The radiotherapy consists of sending
-X-rays on a cancerous tumor in order to destroy it. The photons interact in the
-body producing electrons by photo-electric effect. These electrons destroy the
-cells and produce secondary photons which will also produce electrons. One
-quantity used to know if a cell will die or due to radiation is the 
-absorbed dose. The absorbed dose is defined as the energy deposition by unit of mass. 
-The unit of the absorbed dose is the Gray $\(Gy=\frac{J}{kg}\)$. This is the
-quantity that will be chosen by the physician in order to kill the tumor. The dose 
-has to be large enough in the tumor to kill the cancerous cells but as small as 
-possible in the healthy cells. It is very important to spare the healthy cells
-because the radiation can cause cancer several years later. To compute this
-dose, several methods can be applied :\\
-\begin{description}
-\item[Semi-analytic methods;] very fast but inaccurate.
-\item[Deterministic methods;] fast and accurate but require a lot of memory.
-\item[Monte-Carlo methods;] very accurate but slow to converge.
-\end{description}
-Monte-Carlo methods are, of course, very interesting to have very accurate 
+The transport of photons and electrons has many applications in medical
+physics and particularly in radiotherapy. Radiotherapy uses photons or charged
+particles to damage the DNA of the cancerous cells. While using photons, free 
+electrons are created which ionize the environment and create free radicals. 
+These free radicals damage the DNA of the cells. One quantity used to gauge whether 
+a cell will die due to radiation is the absorbed dose. The absorbed dose is 
+defined as the energy deposition by unit of mass, measured in unit of Gray 
+$\(Gy=\frac{J}{kg}\)$. This is the quantity that will be determined by the physician 
+in order to treat the tumor. To compute this dose, several methods can be applied : 
+semi-analytic methods, deterministic methods and Monte-Carlo methods.
+Monte-Carlo methods are very interesting to have very accurate 
 results, however they are slow to converge and they remain too slow for 
 effective clinical use \cite{acuros}. Other methods like pencil-beam convolution and
-convolution superposition employ the use of pre-calculated Monte-Carlo dose
+convolution superposition employ pre-calculated Monte-Carlo dose
 kernels, which are then locally scaled to approximate photon and electron
-transport in the presence of heterogeneities. These methods have some trouble in 
+transport in the presence of heterogeneities. These methods have some problems in 
 the presence of large density gradients, such as those at interfaces between 
-different materials: air, bone, lung and soft tissue \cite{acuros}. Therefore, 
-the deterministic methods appear to be more and more interesting for radiotherapy. 
-It has been shown that a good agreement can be obtained between 
+different materials: air, bone, lung and soft tissue \cite{acuros} \cite{seco}
+\cite{krieger}. Therefore, the deterministic methods appear to be more and more 
+interesting for radiotherapy. It has been shown that there is agreement between 
 deterministic methods and Monte-Carlo methods \cite{acuros}.\\
 In this work, we will present a $S_n$ method for the photon-electron
 transport. The difficulty of this calculation comes from the transport of the
-electrons. The electrons are charged particles and thus, they have very
-anisotropic scattering because they can interact with other particles through 
-Coulomb interaction. The electrons have a lot of interactions where the energy 
-and the direction almost do not change. This anisotropy creates some problems 
-since the standard Legendre expansion representing the cross-sections would 
-require hundreds of terms. A common approximation is to replace the Boltzmann 
-equation by the Boltzmann-Fokker-Planck equation. These equation consists of 
-adding two terms: one causes to particles to redistribute in direction without 
-energy change and the other to redistribute in energy without directional 
-change \cite{morel_81}. This allows the Legendre expansion of the cross-section to 
-keep a low order. It is worth to note that the Henyey-Greenstein kernel widely used 
-to describe the scattering of light in biological tissues cannot be expressed using 
-the BFP equation \cite{larsen}. However, this model, even if it is useful, because 
-of its simplicity, has no theoretical root. The reason why the Henyey-Greenstein 
-cannot be expressed with the BFP equation is that the BFP equation assumes that the 
-scattering cross section is highly peaked. The Henyey-Greenstein cross section is 
-not peaked enough to be represented by the BFP equation.\\ 
-The last approximation that we will make is to replace the term modifying the
-direction without changing the energy by a Dirac distribution. However, an exact 
-integration of the Dirac distribution requires to use the Galerkin quadrature 
-\cite{graal}, which requires a lot of memory. This quadrature needs the number of 
-flux moments and the number of angular fluxes to be equal. This number rises very 
-quickly with the order the $S_n$ method. For example, when using the $S_n$ 
-discretization for $n=16$, we have, in 3D, 288 directions and thus, 288 angular 
-fluxes or flux moments to store. In this work, we will see the effects of truncation 
-on the Galerkin quadrature. The goal is to keep as few flux moments as possible while 
-still keeping an accurate solution. We will also show a method of ordering
+electrons. Because the electrons are charged particles, they have very
+anisotropic scattering due to their interactions with other particles through 
+Coulomb interaction. This anisotropy causes some
+complications since the standard Legendre expansion representing the cross-sections 
+would require hundreds of terms. A common approximation is to use a Dirac
+distribution to model the forward-peaked scattering of the electrons 
+and a continuous slowing down term for energy loss due to Coulomb
+interactions. This allows the Legendre expansion of the cross-section to 
+keep a low order. However, an exact integration of the Dirac distribution requires 
+to use the Galerkin quadrature \cite{graal}, which demands a lot of memory. This 
+quadrature needs the number of flux moments and the number of angular fluxes to be 
+equal and this number rises very quickly with the order of the $S_n$ method. 
+For example, when using the $S_n$ discretization for $n=16$, we have, in 3D, 
+288 directions and thus, 288 angular fluxes or flux moments to store. In this 
+work, we will see the effects of truncation on the Galerkin quadrature. We will 
+change the order of the scattering cross sections and observed the effect on the 
+absorbed dose. The goal is to keep as few flux moments as possible while 
+maintaining an accurate solution. We will also show a method of ordering
 the energy groups which allows to decompose one big transport problem in
-several smaller transport problems.
+several smaller transport problems. This interesting possibility is due to
+the fact that there is no thermalization of the particles. Therefore, every
+particle undergoes only slowing down and the scattering matrix can be written
+as a lower block triangular matrix. The interactions between photons and
+electrons forbids a lower triangular matrix by adding some
+upscattering terms in the scattering matrix.
