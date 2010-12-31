@@ -1,4 +1,25 @@
-\begin{abstract}
+\documentclass[11pt,letter,twoside]{mc2011}
+
+\globalabst
+
+\begin{document}
+
+\title{Methods to reduce memory needs for coupled photon-electron transport.}
+
+\author{
+    \textbf{Bruno Turcksin, Jean Ragusa, and Jim Morel}\\
+    Texas A\&M University, Department of Nuclear Engineering\\
+    College Sation, Texas 77843-3133\\
+    turcksin@neo.tamu.edu; ragusa@ne.tamu.edu; morel@ne.tamu.edu
+}
+
+\maketitle
+
+\thispagestyle{empty}
+
+\section*{ABSTRACT}
+
+\small
 In this work, we present two methods to decrease memory needs while solving 
 the photon-electron transport equation. The coupled transport of electrons and
 photons is important in radiotherapy because it models the interactions of
@@ -17,5 +38,9 @@ We show in this paper that an appropriate alternation of photons/electrons group
 allows us to rewrite one transport problem of $n$ groups as $gcd$ successive 
 transport problems of $\frac{n}{gcd}$ groups where $gcd$ is the greatest common 
 divisor between the number of photon groups and the number of electron groups.
+
+
 \keywords{Galerkin quadrature, photon-electron transport, radiotherapy}
-\end{abstract}
+
+
+\end{document}

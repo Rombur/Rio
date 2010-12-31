@@ -1,0 +1,48 @@
+This is BibTeX, Version 0.99c (TeX Live 2009/Debian)
+The top-level auxiliary file: main.aux
+The style file: unsrt.bst
+Database file #1: biblio.bib
+Warning--empty author in cepxs
+Warning--empty year in cepxs
+You've used 8 entries,
+            1791 wiz_defined-function locations,
+            483 strings with 4748 characters,
+and the built_in function-call counts, 1268 in all, are:
+= -- 97
+> -- 76
+< -- 0
++ -- 29
+- -- 21
+* -- 69
+:= -- 239
+add.period$ -- 23
+call.type$ -- 8
+change.case$ -- 8
+chr.to.int$ -- 0
+cite$ -- 10
+duplicate$ -- 64
+empty$ -- 113
+format.name$ -- 21
+if$ -- 266
+int.to.chr$ -- 0
+int.to.str$ -- 8
+missing$ -- 8
+newline$ -- 42
+num.names$ -- 7
+pop$ -- 12
+preamble$ -- 1
+purify$ -- 0
+quote$ -- 0
+skip$ -- 34
+stack$ -- 0
+substring$ -- 0
+swap$ -- 8
+text.length$ -- 0
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 0
+warning$ -- 2
+while$ -- 7
+width$ -- 9
+write$ -- 86
+(There were 2 warnings)

@@ -1,0 +1,51 @@
+\begin{thebibliography}{1}
+
+\bibitem{acuros}
+Oleg~N. Vassiliev, Todd~A. Wareing, John McGhee, Gregory Failla, Mohammad~R.
+  Salehpour, and Firas Mourtada.
+\newblock Validation of a new grid-based boltzmann equation solver for dose
+  calculation in radiotherapy with photo beams.
+\newblock {\em Physics in Medicine and Biology}, 55, 2010.
+
+\bibitem{seco}
+J.~Seco, E.~Adams, M.~Bidmead, M.~Partridge, and F.~Verhaegen.
+\newblock Head-and-neck imrt treatments assessed with a monte-carlo dose
+  calculation engine.
+\newblock {\em Physics in Medicine and Biology}, 50, 2005.
+
+\bibitem{krieger}
+Thomas Krieger and Otto~A Sauer.
+\newblock Monte-carlo- versus pencil-beam-/collapsed-cone-dose calculation in a
+  heterogeneous multi-layer phantom.
+\newblock {\em Physics in Medicine and Biology}, 50, 2005.
+
+\bibitem{graal}
+J.~E. Morel.
+\newblock A hybrid collocation-galerkin-sn method for solving the boltzmann
+  transport equation.
+\newblock {\em Nuclear Science and Engineering}, 101, 1989.
+
+\bibitem{cepxs}
+Cepxs/oneld 1.0 manual user.
+\newblock {\em RSICC Computer Code Collection}.
+
+\bibitem{morel_96}
+J.E. Morel and D.P. Sloan.
+\newblock A hybrid multigroup/continuous-energy monte-carlo method for solving
+  the boltzmann-fokker-planck equation.
+\newblock {\em Nuclear Science and Engineering}, 124, 1996.
+
+\bibitem{morel_81}
+J.E. Morel.
+\newblock Fokker-planck calculations using standard discrete ordinates
+  transport codes.
+\newblock {\em Nuclear Science and Engineering}, 79, 1981.
+
+\bibitem{mem}
+Kent~A. Gifford, John L.~Horton Jr., Todd~A. Wareing, and Gregory~Failla \and
+  Firas~Mourtada.
+\newblock Comparison of a finite-element multigroup discrete-ordinates codes
+  with monte-carlo for radiotherapy calculations.
+\newblock {\em Physics in Medicine and Biology}, 51, 2006.
+
+\end{thebibliography}

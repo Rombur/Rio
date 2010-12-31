@@ -1,19 +1,20 @@
 \section{Memory issue}
-In the previous section, we showed that we must use the Galerkin to solve
-(\ref{solved}) correctly. This is a significant problem for memory consumption.  
+In the previous section, we showed that we must use a Galerkin quadrature to solve
+(\ref{solved}) correctly. This may be a significant issue in terms of memory
+requirements.  
 For neutron transport, the scattering is less anisotropic than for electron
-transport and, therefore, there are much fewer flux moments than there are angular 
-fluxes. This is the reason why the flux is stored by storing its moments. 
-However, as we showed before, the Galerkin quadrature requires the number of moments 
+transport, and therefore, fewer flux moments than angular 
+fluxes are needed. This is the reason why the information is stored as flux moments. 
+However, Galerkin quadratures require the number of moments 
 to be equal to the number of directions. This requirement is very restrictive and it 
 is important to explore whether it is possible to decrease the number of moments 
-while keeping a larger number of direction. In \cite{mem}, the authors used a 
+while keeping a larger number of directions. In \cite{mem}, the authors used a 
 Legendre expansion of the scattering cross section lower than that required by the 
 Galerkin quadrature. They have shown a good agreement between their results 
-and Monte-Carlo. In the next section, we will study the effects of changing 
+and Monte-Carlo simulations. In the next section, we will study the effects of changing 
 the order of the Legendre expansion while keeping a larger number of angular 
 fluxes than the order of the scattering expansion. We proceed  by building 
-the matrices $M$ and $D$ using the Galerkin quadrature, then truncating them 
+the matrices $M$ and $D$ using the Galerkin quadrature, then truncate them 
 to keep only a few moments. Therefore, $M$ and $D$ will be rectangular instead 
-of square. We will show the results for three materials (water, Al and Au) 
-and different Legendre expansions.
+of square matrices. We show the results for two materials (Al and Au) 
+and for different Legendre expansions.
