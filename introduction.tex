@@ -16,10 +16,11 @@ convolution-superposition, employ pre-calculated Monte-Carlo dose
 kernels, which are then locally scaled to approximate photon and electron
 transport in the presence of heterogeneities. These methods present some issues in 
 the presence of large density gradients, such as those found at interfaces between 
-different materials: air, bone, lung and soft tissue \cite{acuros,seco,krieger}. 
-Therefore, deterministic methods appear to be more and more 
-interesting for radiotherapy. It has been shown that there is agreement between 
-deterministic methods and Monte-Carlo methods \cite{acuros}.\\
+different materials: air, bone, lung and soft tissue
+\cite{acuros,seco,krieger}. If enough cells are
+used, deterministic methods can be accurate even on interfaces between
+materials \cite{acuros}. These methods are faster than Monte-Carlo methods but slower
+than the semi-analytic methods.\\
 In this work, we present a $S_n$ method for photon-electron
 transport. The difficulty of this calculation comes from the transport of the
 electrons. Because the electrons are charged particles, they have very
@@ -31,15 +32,16 @@ distribution to model the forward-peaked scattering of the electrons
 and a continuous slowing down term for energy loss due to Coulomb
 interactions. This allows the Legendre expansion of the cross section to 
 be kept to a low order. However, an exact integration of the Dirac distribution requires 
-to use Galerkin quadratures \cite{graal}, which demand a lot of memory. These
+to use Galerkin quadratures \cite{graal} that demand a significant amount of memory. These
 quadratures need the number of flux moments and the number of angular fluxes to be 
 equal and this number varies as $\frac{n(n+2)}{8}$ per octant with the order of the $S_n$ method.  
 For example, when using the $S_n$ discretization for $n=16$, we have, in 3D, 
-288 directions and thus, 288 angular fluxes or flux moments to store. In this 
-work, we analyze the effects of truncation on the Galerkin quadrature. We
-alter the order of the scattering cross sections and observed the effect on the 
+288 directions and thus, 288 angular fluxes or flux moments to store.\\
+In this work, we analyze the effects of truncation on the Galerkin quadratures.
+To do this, we
+alter the order of the scattering cross sections and observe the effect on the 
 absorbed dose. The goal is to keep as few flux moments as possible while 
-maintaining an accurate solution. We also show a method of ordering
+maintaining an accurate solution.  We also show a method of ordering
 the energy groups which allows to decompose one large transport problem in
 several smaller transport problems. This interesting possibility is due to
 the fact that there is no thermalization of the particles. Therefore, every

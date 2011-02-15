@@ -4,7 +4,7 @@
 
 \begin{document}
 
-\title{Methods to reduce memory needs for coupled photon-electron transport.}
+\title{Techniques to reduce memory needs for coupled photon-electron transport.}
 
 \author{
     \textbf{Bruno Turcksin, Jean Ragusa, and Jim Morel}\\
@@ -20,26 +20,25 @@
 \section*{ABSTRACT}
 
 \small
-In this work, we present two methods to decrease memory needs while solving 
+ In this work, we present two methods to decrease memory needs while solving 
 the photon-electron transport equation. The coupled transport of electrons and
-photons is important in radiotherapy because it models the interactions of
+photons is of importance in radiotherapy because it describes the interactions of
 X-rays with matter. One of the issues of discretized electron transport is that the
 electron scattering is very forward peaked. A common approximation is to
-represent that peak in the scattering cross section by a Dirac distribution.
-This is convenient, but the integration of this distribution requires the
+represent the peak in the scattering cross section by a Dirac distribution.
+This is convenient, but the integration over all angles of this distribution requires the
 use of Galerkin quadratures. By construction these quadratures impose that
-the number of flux moments equals the number of directions 
+the number of flux moments be equal to the number of directions 
 (number of angular fluxes), which is very demanding in terms of memory. In this study, 
 we show that even if the number of moments is not as large as the number 
-of directions, an accurate solution can be obtained. Another method to decrease the 
+of directions, an accurate solution can be obtained when using Galerkin
+quadratures. Another method to decrease the 
 memory needs involves choosing an appropriate reordering of the energy
 groups. 
 We show in this paper that an appropriate alternation of photons/electrons groups 
 allows us to rewrite one transport problem of $n$ groups as $gcd$ successive 
 transport problems of $\frac{n}{gcd}$ groups where $gcd$ is the greatest common 
 divisor between the number of photon groups and the number of electron groups.
-
-
 \keywords{Galerkin quadrature, photon-electron transport, radiotherapy}
 
 

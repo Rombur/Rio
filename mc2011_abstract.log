@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2010.9.1)  29 DEC 2010 18:41
+This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2010.9.1)  31 DEC 2010 08:03
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -34,7 +34,7 @@ File: size11.clo 2007/10/19 v1.4h Standard LaTeX file (size option)
 LaTeX Warning: Unused global option(s):
     [letter].
 
-No file mc2011_abstract.aux.
+(./mc2011_abstract.aux)
 \openout1 = `mc2011_abstract.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 5.
@@ -50,7 +50,7 @@ LaTeX Font Info:    ... okay on input line 5.
 LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 5.
 LaTeX Font Info:    ... okay on input line 5.
 LaTeX Font Info:    Try loading font information for OT1+ptm on input line 16.
-(/usr/share/texmf-texlive/tex/latex/psnfss/ot1ptm.fd
+ (/usr/share/texmf-texlive/tex/latex/psnfss/ot1ptm.fd
 File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
 )
 LaTeX Font Info:    External font `cmex10' loaded for size
@@ -60,15 +60,16 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <6> on input line 16.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <7> on input line 38.
+(Font)              <7> on input line 39.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <5> on input line 38.
- [1
+(Font)              <5> on input line 39.
+
+[1
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] (./mc2011_abstract.aux) ) 
 Here is how much of TeX's memory you used:
- 283 strings out of 493857
- 3115 string characters out of 1153306
+ 285 strings out of 493857
+ 3155 string characters out of 1153306
  52632 words of memory out of 3000000
  3628 multiletter control sequences out of 15000+50000
  10907 words of font info for 31 fonts, out of 3000000 for 9000
@@ -83,7 +84,7 @@ mi7.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmr10.pfb></us
 r/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/tex
 mf-texlive/fonts/type1/urw/times/utmr8a.pfb></usr/share/texmf-texlive/fonts/typ
 e1/urw/times/utmri8a.pfb>
-Output written on mc2011_abstract.pdf (1 page, 103131 bytes).
+Output written on mc2011_abstract.pdf (1 page, 103372 bytes).
 PDF statistics:
  39 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
