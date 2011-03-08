@@ -1,4 +1,4 @@
-\section{Introduction}
+\section{INTRODUCTION}
 The transport of photons and electrons has many applications in medical
 physics and particularly in radiotherapy. Radiotherapy uses photons and charged
 particles to damage the DNA of cancerous cells. While using photons, free 
@@ -23,7 +23,7 @@ materials \cite{acuros}. These methods are faster than Monte-Carlo methods but s
 than the semi-analytic methods.\\
 In this work, we present a $S_n$ method for photon-electron
 transport. The difficulty of this calculation comes from the transport of the
-electrons. Because the electrons are charged particles, they have very
+electrons. Because the electrons are charged particles, they have highly
 anisotropic scattering due to their interactions with other particles through 
 Coulomb interaction. This anisotropy causes some
 complications since the standard Legendre expansion representing the cross sections 
@@ -31,23 +31,25 @@ would require hundreds of terms. A common approximation is to use a Dirac
 distribution to model the forward-peaked scattering of the electrons 
 and a continuous slowing down term for energy loss due to Coulomb
 interactions. This allows the Legendre expansion of the cross section to 
-be kept to a low order. However, an exact integration of the Dirac distribution requires 
-to use Galerkin quadratures \cite{graal} that demand a significant amount of memory. These
-quadratures need the number of flux moments and the number of angular fluxes to be 
-equal and this number varies as $\frac{n(n+2)}{8}$ per octant with the order of the $S_n$ method.  
+be kept to a low order. However, an exact integration of the Dirac distribution 
+requires the use of Galerkin quadratures \cite{graal} that demand a significant 
+amount of memory. These quadratures require the number of flux moments and the 
+number of angular fluxes to be equal and this number varies, for triangular 
+quadratures, as $\frac{n(n+2)}{8}$ per octant with the order of the $S_n$ method.  
 For example, when using the $S_n$ discretization for $n=16$, we have, in 3D, 
 288 directions and thus, 288 angular fluxes or flux moments to store.\\
 In this work, we analyze the effects of truncation on the Galerkin quadratures.
 To do this, we
 alter the order of the scattering cross sections and observe the effect on the 
 absorbed dose. The goal is to keep as few flux moments as possible while 
-maintaining an accurate solution.  We also show a method of ordering
-the energy groups which allows to decompose one large transport problem in
-several smaller transport problems. This interesting possibility is due to
-the fact that there is no thermalization of the particles. Therefore, every
+maintaining an accurate solution.\\
+We also show a method of ordering
+the energy groups which allows us the decomposition one large transport
+problem into several smaller transport problems. We can do this because there 
+is no thermalization of the particles. Therefore, every
 particle undergoes only slowing down and the scattering matrix can be written
 as a lower block triangular matrix. The interactions between photons and
-electrons forbids a lower triangular matrix by adding some
+electrons forbid a lower triangular matrix by adding some
 upscattering terms in the scattering matrix. The code generating the cross
 sections, CEPXS \cite{cepxs}, generates first the cross sections for one
 particle type and then, the cross sections for the other one. We show in this

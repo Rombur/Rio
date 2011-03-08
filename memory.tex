@@ -1,20 +1,20 @@
-\section{Memory issues}
-In the previous section, we showed that we must use a Galerkin quadrature to solve
+\section{MEMORY ISSUES}
+In the previous section, we showed that one should employ a Galerkin quadrature to solve
 (\ref{solved}) correctly. This may be a significant issue in terms of memory
-requirements.  
-For neutron transport, the scattering is less anisotropic than for electron
-transport, and therefore, fewer flux moments than angular 
-fluxes are needed. This is the reason why the information is stored as flux moments. 
-However, Galerkin quadratures require the number of moments 
+requirements. For neutron transport, the scattering is less anisotropic than 
+for electron transport, and therefore, fewer flux moments than angular 
+fluxes are needed. This is the reason why the information is usually stored as 
+flux moments. However, Galerkin quadratures require the number of moments 
 to be equal to the number of directions. This requirement is very restrictive and it 
 is important to explore whether it is possible to decrease the number of moments 
-while keeping a larger number of directions. In \cite{mem}, the authors used a 
-Legendre expansion of the scattering cross section lower than that required by the 
+while maintaining a larger number of directions. In \cite{mem}, the authors used a 
+Legendre expansion of the scattering cross section with an order lower than that required by the 
 Galerkin quadrature. They have shown a good agreement between their results 
-and Monte-Carlo simulations. In the next section, we will study the effects of changing 
-the order of the Legendre expansion while keeping a larger number of angular 
-fluxes than the order of the scattering expansion. We proceed  by building 
-the matrices $M$ and $D$ using the Galerkin quadrature, then truncate them 
-to keep only a few moments. Therefore, $M$ and $D$ will be rectangular instead 
-of square matrices. We show the results for two materials (Al and Au) 
-and for different Legendre expansions.
+and Monte-Carlo simulations. In the next section, we study the effects of
+truncating the Legendre expansion while keeping a larger number of angular 
+fluxes than the order of the scattering expansion. We proceed by building 
+the matrices $M$ and $D$ using a Galerkin quadrature, then truncate them 
+to keep only a few moments. Therefore, $M$ and $D$ are rectangular instead 
+of square matrices and a truncated scattering expansion can be used. 
+We show the results for two materials, Al and Au, and for different Legendre 
+expansions.

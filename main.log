@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2010.9.1)  31 DEC 2010 08:03
+This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2010.11.15)  1 MAR 2011 10:35
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -12,7 +12,7 @@ ak, danish, dutch, finnish, french, basque, ngerman, german, german-x-2009-06-1
 skrit, italian, latin, latvian, lithuanian, mongolian2a, mongolian, bokmal, nyn
 orsk, romanian, irish, coptic, serbian, turkish, welsh, esperanto, uppersorbian
 , estonian, indonesian, interlingua, icelandic, kurmanji, slovenian, polish, po
-rtuguese, spanish, galician, catalan, swedish, ukenglish, loaded.
+rtuguese, spanish, galician, catalan, swedish, ukenglish, pinyin, loaded.
 (./mc2011.cls
 Document Class: mc2011 2005/09/16 v1.4f Standard LaTeX document class
 (/usr/share/texmf-texlive/tex/latex/base/size11.clo
@@ -115,7 +115,7 @@ File: graphics.cfg 2009/08/28 v1.8 graphics configuration of TeX Live
 Package graphics Info: Driver file: pdftex.def on input line 91.
 
 (/usr/share/texmf-texlive/tex/latex/pdftex-def/pdftex.def
-File: pdftex.def 2009/08/25 v0.04m Graphics/color for pdfTeX
+File: pdftex.def 2010/03/12 v0.04p Graphics/color for pdfTeX
 \Gread@gobject=\count99
 ))
 \Gin@req@height=\dimen114
@@ -184,7 +184,32 @@ Package: natbib 2009/07/16 8.31 (PWD, AO)
 LaTeX Info: Redefining \cite on input line 694.
 \c@NAT@ctr=\count112
 )
-(/usr/share/texmf-texlive/tex/latex/fancyhdr/fancyhdr.sty
+(/usr/share/texmf-texlive/tex/latex/caption/caption.sty
+Package: caption 2009/10/09 v3.1k Customizing captions (AR)
+
+(/usr/share/texmf-texlive/tex/latex/caption/caption3.sty
+Package: caption3 2009/10/09 v3.1k caption3 kernel (AR)
+\captionmargin=\dimen121
+\captionmargin@=\dimen122
+\captionwidth=\dimen123
+\caption@indent=\dimen124
+\caption@parindent=\dimen125
+\caption@hangindent=\dimen126
+Package caption Info: Unknown document class (or package),
+(caption)             standard defaults will be used on input line 1068.
+)
+
+Package caption Warning: Unsupported document class (or package) detected,
+(caption)                usage of the caption package is not recommended.
+See the caption package documentation for explanation.
+
+Package caption Info: \@makecaption = \long macro:#1#2->\vskip \abovecaptionski
+p \sbox \@tempboxa {\textbf {#1: #2}}\ifdim \wd \@tempboxa >\hsize #1: #2\par \
+else \global \@minipagefalse \hb@xt@ \hsize {\hfil \box \@tempboxa \hfil }\fi \
+vskip \belowcaptionskip .
+\c@ContinuedFloat=\count113
+Package caption Info: float package is loaded.
+) (/usr/share/texmf-texlive/tex/latex/fancyhdr/fancyhdr.sty
 \fancy@headwidth=\skip50
 \f@ncyO@elh=\skip51
 \f@ncyO@erh=\skip52
@@ -206,36 +231,38 @@ LaTeX Warning: Unused global option(s):
 (./main.aux)
 \openout1 = `main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 45.
-LaTeX Font Info:    ... okay on input line 45.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 45.
-LaTeX Font Info:    ... okay on input line 45.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 45.
-LaTeX Font Info:    ... okay on input line 45.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 45.
-LaTeX Font Info:    ... okay on input line 45.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 45.
-LaTeX Font Info:    ... okay on input line 45.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 45.
-LaTeX Font Info:    ... okay on input line 45.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 46.
+LaTeX Font Info:    ... okay on input line 46.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 46.
+LaTeX Font Info:    ... okay on input line 46.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 46.
+LaTeX Font Info:    ... okay on input line 46.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 46.
+LaTeX Font Info:    ... okay on input line 46.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 46.
+LaTeX Font Info:    ... okay on input line 46.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 46.
+LaTeX Font Info:    ... okay on input line 46.
  (/usr/share/texmf/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count113
-\scratchdimen=\dimen121
+\scratchcounter=\count114
+\scratchdimen=\dimen127
 \scratchbox=\box31
-\nofMPsegments=\count114
-\nofMParguments=\count115
+\nofMPsegments=\count115
+\nofMParguments=\count116
 \everyMPshowfont=\toks27
-\MPscratchCnt=\count116
-\MPscratchDim=\dimen122
-\MPnumerator=\count117
+\MPscratchCnt=\count117
+\MPscratchDim=\dimen128
+\MPnumerator=\count118
 \everyMPtoPDFconversion=\toks28
 )
-LaTeX Font Info:    Try loading font information for OT1+ptm on input line 55.
+Package caption Info: Begin \AtBeginDocument code.
+Package caption Info: End \AtBeginDocument code.
+LaTeX Font Info:    Try loading font information for OT1+ptm on input line 56.
  (/usr/share/texmf-texlive/tex/latex/psnfss/ot1ptm.fd
 File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
 )
-LaTeX Font Info:    Try loading font information for U+bbold on input line 55.
+LaTeX Font Info:    Try loading font information for U+bbold on input line 56.
 
 (/usr/share/texmf-texlive/tex/latex/bbold/Ubbold.fd) (./abstract.tex)
 (./introduction.tex) [1
@@ -249,70 +276,77 @@ File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10.95> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 22.
  [2]
-[3]) (./memory.tex) (./results.tex [4]
-<./images/al/group_0_moment_0.png, id=30, 578.16pt x 433.62pt>
+[3]) (./memory.tex) [4] (./results.tex
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [5]
+<./images/al/group_0_moment_0.png, id=34, 578.16pt x 433.62pt>
 File: ./images/al/group_0_moment_0.png Graphic file (type png)
 
 <use ./images/al/group_0_moment_0.png>
-<./images/al/group_39_moment_0.png, id=32, 578.16pt x 433.62pt>
+<./images/al/group_39_moment_0.png, id=36, 578.16pt x 433.62pt>
 File: ./images/al/group_39_moment_0.png Graphic file (type png)
 
-<use ./images/al/group_39_moment_0.png> [5]
-<./images/al/group_0_moment_30.png, id=36, 578.16pt x 433.62pt>
+<use ./images/al/group_39_moment_0.png>
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [6]
+<./images/al/group_0_moment_30.png, id=40, 578.16pt x 433.62pt>
 File: ./images/al/group_0_moment_30.png Graphic file (type png)
 
 <use ./images/al/group_0_moment_30.png>
-<./images/al/group_39_moment_30.png, id=37, 578.16pt x 433.62pt>
+<./images/al/group_39_moment_30.png, id=41, 578.16pt x 433.62pt>
 File: ./images/al/group_39_moment_30.png Graphic file (type png)
 
 <use ./images/al/group_39_moment_30.png>
-<./images/al/group_0_moment_142.png, id=38, 578.16pt x 433.62pt>
+<./images/al/group_0_moment_142.png, id=42, 578.16pt x 433.62pt>
 File: ./images/al/group_0_moment_142.png Graphic file (type png)
 
 <use ./images/al/group_0_moment_142.png>
-<./images/al/group_39_moment_142.png, id=39, 578.16pt x 433.62pt>
+<./images/al/group_39_moment_142.png, id=43, 578.16pt x 433.62pt>
 File: ./images/al/group_39_moment_142.png Graphic file (type png)
 
-<use ./images/al/group_39_moment_142.png> [6 <./images/al/group_0_moment_0.png>
- <./images/al/group_39_moment_0.png> <./images/al/group_0_moment_30.png> <./ima
-ges/al/group_39_moment_30.png> <./images/al/group_0_moment_142.png> <./images/a
-l/group_39_moment_142.png>]) (./reordering.tex
-<group.png, id=50, 617.00513pt x 539.31488pt>
-File: group.png Graphic file (type png)
- <use group.png> [7] [8 <./group.png (PNG copy)>]) (./conclusions.tex) (./main.
-bbl
-Underfull \vbox (badness 7133) has occurred while \output is active []
+<use ./images/al/group_39_moment_142.png>
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [9])
-AED: lastpage setting LastPage [10] (./main.aux) ) 
+ [7 <./images/al/group_0_moment_0.png> <./images/al/group_39_moment_0.png> <./i
+mages/al/group_0_moment_30.png> <./images/al/group_39_moment_30.png> <./images/
+al/group_0_moment_142.png> <./images/al/group_39_moment_142.png>]) (./reorderin
+g.tex
+[8] <group.png, id=58, 617.00513pt x 539.31488pt>
+File: group.png Graphic file (type png)
+ <use group.png> [9 <./group.png (PNG copy)>]) (./conclusions.tex) [10] (./main
+.bbl)
+AED: lastpage setting LastPage [11] (./main.aux) ) 
 Here is how much of TeX's memory you used:
- 2816 strings out of 493857
- 34748 string characters out of 1153306
- 97466 words of memory out of 3000000
- 6019 multiletter control sequences out of 15000+50000
+ 3739 strings out of 493848
+ 51297 string characters out of 1152822
+ 123655 words of memory out of 3000000
+ 6937 multiletter control sequences out of 15000+50000
  16567 words of font info for 53 fonts, out of 3000000 for 9000
  714 hyphenation exceptions out of 8191
- 33i,20n,43p,251b,330s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 36i,20n,43p,251b,343s stack positions out of 5000i,500n,10000p,200000b,50000s
 {/usr/share/texmf-texlive/fon
 ts/enc/dvips/base/8r.enc}</usr/share/texmf-texlive/fonts/type1/public/amsfonts/
 cm/cmbsy10.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmbx10.
 pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/s
-hare/texmf-texlive/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texmf-
-texlive/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texmf-texlive/fon
-ts/type1/public/amsfonts/cm/cmmi6.pfb></usr/share/texmf-texlive/fonts/type1/pub
-lic/amsfonts/cm/cmmi7.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts
-/cm/cmmi8.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmmib10.
-pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/sh
-are/texmf-texlive/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/share/texmf-tex
-live/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texmf-texlive/fonts/ty
-pe1/public/amsfonts/cm/cmr9.pfb></usr/share/texmf-texlive/fonts/type1/public/am
-sfonts/cm/cmsy10.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/c
-msy8.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmti10.pfb></
-usr/share/texmf-texlive/fonts/type1/urw/times/utmr8a.pfb></usr/share/texmf-texl
-ive/fonts/type1/urw/times/utmri8a.pfb>
-Output written on main.pdf (10 pages, 371133 bytes).
+hare/texmf-texlive/fonts/type1/public/amsfonts/cm/cmbx8.pfb></usr/share/texmf-t
+exlive/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texmf-texlive/font
+s/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texmf-texlive/fonts/type1/pub
+lic/amsfonts/cm/cmmi6.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts
+/cm/cmmi7.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmmi8.pf
+b></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmmib10.pfb></usr/sh
+are/texmf-texlive/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texmf-te
+xlive/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/share/texmf-texlive/fonts/t
+ype1/public/amsfonts/cm/cmr8.pfb></usr/share/texmf-texlive/fonts/type1/public/a
+msfonts/cm/cmr9.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cm
+sy10.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmsy8.pfb></u
+sr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/te
+xmf-texlive/fonts/type1/urw/times/utmr8a.pfb></usr/share/texmf-texlive/fonts/ty
+pe1/urw/times/utmri8a.pfb>
+Output written on main.pdf (11 pages, 386723 bytes).
 PDF statistics:
- 122 PDF objects out of 1000 (max. 8388607)
+ 129 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  36 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -1,13 +1,14 @@
-\section{Conclusions}
+\section{CONCLUSIONS}
 In this paper, we have shown that it is not necessary to keep the full order of
-the scattering cross sections to obtain an accurate answer while solving
-photon-electron transport. Truncating the Galerkin quadrature allows us to
-decrease significantly the memory needs. We also presented a method to
-advantageously reorder the energy groups in the scattering matrix. The groups can 
-be reordered in such a way that a problem with $n_p$ groups of photons and $n_e$ 
-groups of electrons can be rewritten as $gcd$ problems of $\frac{n_p+n_e}{gcd}$ 
-groups, where $gcd$ is the greatest common divisor between $n_p$ and $n_e$.
-The reordering also decreases the number of iterations needed to solve the
-multigroup transport equation.
-These two methods combined allow to decrease significantly the memory needed to 
-solve electron transport.
+the scattering cross sections to obtain an accurate result while solving
+photon-electron transport. Truncating the Galerkin quadrature or equivalently
+truncating the scattering expansion while keeping a large number of directions 
+allows us to significantly decrease the memory requirements. We also presented a 
+method to advantageously reorder the energy groups in the scattering matrix. 
+The groups can be reordered in such a way that a problem with $n_p$ groups of 
+photons and $n_e$ groups of electrons can be rewritten as $gcd$ problems of 
+$\frac{n_p+n_e}{gcd}$ groups, where $gcd$ is the greatest common divisor 
+between $n_p$ and $n_e$. The reordering also decreases the number of iterations 
+needed to solve the multigroup transport equation. These two methods can 
+significantly decrease the memory needed to solve coupled photon/electron 
+transport problems.
